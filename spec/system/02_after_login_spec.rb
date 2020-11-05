@@ -155,6 +155,10 @@ describe '[STEP2] ユーザログイン後のテスト' do
         expect(page).to have_field 'book[body]'
       end
       it 'opinionフォームに値が入っていない' do
+        p '-----------'
+        p find_field('book[body]')
+        p find_field('book[body]').text
+        p '-----------'
         expect(find_field('book[body]').text).to be_blank
       end
       it 'Create Bookボタンが表示される' do
