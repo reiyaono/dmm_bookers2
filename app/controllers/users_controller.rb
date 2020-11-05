@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    redirect_to edit_user_path(@user.id) if @user != current_user
+    redirect_to user_path(current_user.id) if @user != current_user
   end
 
   def show
@@ -18,8 +18,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id), flash: { success: "You've updated user successfully." }
+    if @user.update(user_params)
+      redirect_to user_path(@user.id), flash: { success: "You've updated user successfully." }
+    else
+      render :edit
+    end
   end
 
   private
