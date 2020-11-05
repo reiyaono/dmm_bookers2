@@ -8,9 +8,10 @@
         <td><%= current_user.name %></td>
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
-        <td><div class="btn btn-sm btn-success"><%= link_to "Edit", edit_book_path(@book) %></div></td>
-        <td><div class="btn btn-sm btn-success"><%= link_to "Destroy", book_path(@book), method: :delete %></div></td>
-        <!--<td><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book_2480" rel="nofollow" data-method="delete" href="/books/2480">Destroy</a></td>-->
+        <% if @book.user == current_user%>
+          <td><div class="btn btn-sm btn-success"><%= link_to "Edit", edit_book_path(@book) %></div></td>
+          <td><div class="btn btn-sm btn-success"><%= link_to "Destroy", book_path(@book), method: :delete %></div></td>
+        <% end %>
       </tr>
     </tbody></table>
   </div>

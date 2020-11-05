@@ -11,7 +11,10 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = current_user.books.create!(title: params[:book][:title], body: params[:book][:body])
+    p '-----------'
+    p params
+    p '-----------'
+    book = current_user.books.create!(title: params[:title], body: params[:body])
     redirect_to book_path(book.id)
   end
 
