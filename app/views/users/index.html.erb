@@ -1,1 +1,24 @@
-Book INDEX
+<div class="row">
+  <%= render 'partial/sidebar' %>
+  <div class="col-md-8 offset-md-1">
+    <h2>Users</h2>
+    <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>images</th>
+          <th>name</th>
+          <th></th>
+        </tr>
+      </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>a</td>
+          <td><%= link_to "#{user.name}", user_path(user) %></td>
+          <td>show</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
