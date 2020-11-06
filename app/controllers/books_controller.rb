@@ -13,7 +13,7 @@ class BooksController < ApplicationController
 
   def create
     @book = current_user.books.new
-    @book.title =  params[:title] || params[:book][:title]
+    @book.title = params[:title] || params[:book][:title]
     @book.body = params[:body] || params[:book][:body]
     if @book.save
       redirect_to book_path(@book.id), flash: { success: "You've created book successfully." }

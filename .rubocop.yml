@@ -1,0 +1,36 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - vendor/**/*
+    - tmp/**/*
+    - bin/*
+Style/Documentation:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - config/routes.rb
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - config/initializers/devise.rb
+Metrics/MethodLength:
+  Max: 20
+Metrics/AbcSize:
+  Max: 17.5
+  Exclude:
+    - db/migrate/*
+Metrics/ClassLength:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
